@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: Arial, sans-serif;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f3f2f1;
+}
+.container {
+  width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.header {
+  background-color: #0078d4;
+  padding: 10px;
   color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.header img {
+  height: 24px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.close-button {
+  width: 24px;
+  height: 24px;
+  background: url(close.png) no-repeat center center;
+  background-size: cover;
+  cursor: pointer;
+}
+.content {
+  padding: 20px;
+  text-align: center;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+.content img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+.email-input {
+  width: 92%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.continue-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.email-providers {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+.email-providers img {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
 }
